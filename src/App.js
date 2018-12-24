@@ -8,14 +8,22 @@ class App extends Component {
           {suit: 'h', rank: '3'},
           {suit: 's', rank: 'j'},
           {suit: 'd', rank: 'k'},
-          {suit: 'c', rank: 'a'}
+          {suit: 'c', rank: 'a'},
+          {suit: 'h', rank: '10'}
       ]
   };
 
   render() {
+    const cardList = this.state.cardList.map((card) => (
+      <Card
+          suit={card.suit}
+          rank={card.rank}
+      />
+    ));
+
     return (
       <div className="App">
-          <Card suit="h" rank="3" />
+          {cardList}
       </div>
     );
   }
